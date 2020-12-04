@@ -1,0 +1,63 @@
+@mixin phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+@mixin sm-phone {
+  @media (max-width: 350px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+.product-card__container {
+  font-family: 'Open Sans';
+  flex: 0 0 auto;
+  margin: 1.5em 2em;
+  position: relative;
+  width: 15rem;
+  height: 20rem;
+  background-color: #faf0e6;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+
+  @include tablet {
+    margin: 1.5em 3em;
+  }
+
+  @include phone {
+  flex: 1 0 auto;
+   
+  }
+  @include sm-phone{
+  margin: 1.5em;
+
+  }
+
+  .product-card__container__image {
+    padding: 1em 1em 0 1em;
+    width: 75%;
+    height: 10rem;
+    margin: 0 auto;
+  }
+  .product-card__container__info {
+    .product-card__container__info--title {
+      font-size: 18px;
+      text-align: left;
+      padding-left: 0.5em;
+      margin: 0.5em 0;
+    }
+    .product-card__container__info--price {
+      font-size: 1.5em;
+      text-align: left;
+      padding-left: 0.5em;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@mixin phone {
+  @media (min-width: 300px) and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 750px) and (max-width: 900px) {
+    @content;
+  }
+}
+.login__container {
+  width: 100vw;
+  height: 100vh !important;
+  display: flex;
+
+  .login__container__info {
+    background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6dd5fa, #2980b9);
+    background: linear-gradient(to left, #6dd5fa, #2980b9);
+    width: 60%;
+    height: 100vh;
+
+    @include phone {
+      display: none;
+    }
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  .login__container__CTA {
+    font-family: 'Open sans';
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include phone {
+      width: 100vw;
+    }
+    @include tablet {
+      width: 50%;
+    }
+
+    .login__container__CTA--form {
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      background-color: #f0f0f0;
+      width: 55%;
+      height: 20em;
+      display: flex;
+      align-items: center;
+      form {
+        p {
+          font-size: 0.9rem;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+            color: royalblue;
+          }
+        }
+        text-align: center;
+        font-size: 1.1em;
+        input[type='text'] {
+          width: 70%;
+          margin: 1em 0;
+          font-size: 1.1em;
+
+          @include phone {
+            font-size: 1em;
+          }
+        }
+        input[type='password'] {
+          width: 70%;
+          margin-bottom: 1em;
+          font-size: 1.1em;
+          @include phone {
+            font-size: 1em;
+            margin: 1em;
+          }
+        }
+
+        input[type='submit'] {
+          margin: 1em 0;
+          font-size: 1.2em;
+          border: none;
+          cursor: pointer;
+          background-color: #5ef36d;
+
+          @include phone {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}

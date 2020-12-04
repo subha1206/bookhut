@@ -1,0 +1,20 @@
+.home__container {
+  text-align: center;
+  .home__container__product-listing {
+    margin: 0 auto;
+    width: 90vw;
+    h2 {
+      font-family: 'Open Sans';
+    }
+    .home__container__product-listing--items {
+      margin: 0 auto;
+      display: flex;
+      justify-content: start;
+      align-items: auto;
+      align-content: start;
+      flex-wrap: wrap;
+      width: 90vw;
+      align-items: auto;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+@mixin phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+.product-details__container {
+  width: 90vw;
+  margin: 2em auto;
+  font-family: 'Open Sans';
+
+  .product-details__container__product__info {
+    margin: 0 auto;
+    width: 90%;
+    height: 65vh;
+    background-color: #faf0e6;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    @include tablet {
+      width: 100%;
+    }
+    @include phone {
+      width: 100%;
+      display: block;
+      height: auto;
+      justify-content: unset;
+    }
+    .product-details__container__product__info--image {
+      width: 40%;
+
+      @include phone {
+        width: 100%;
+        display: block;
+      }
+      img {
+        margin: 2em 4em;
+        width: 70%;
+        height: 20em;
+        @include phone {
+          margin: 3rem;
+        }
+      }
+    }
+
+    .product-details__container__product__info--details {
+      width: 60%;
+      @include phone {
+        width: 100%;
+      }
+      .product-details__container__product__info--details__cred {
+        padding-left: 5em;
+        @include phone {
+          padding-left: 2em;
+        }
+        p {
+          font-size: 1.4em;
+          margin-top: -0.5em;
+        }
+        .is-in-stock {
+          font-size: 1.2em;
+          margin-top: -0.5em;
+        }
+      }
+
+      .product-details__container__product__info--details__desc {
+        padding: 0 1.5em 0 5em;
+        @include phone {
+          padding-left: 2em;
+        }
+        margin-top: 2em;
+        .product-details__container__product__info--details__desc--title {
+          font-size: 1em;
+          font-weight: bold;
+        }
+        .desc-text {
+          font-size: 0.8em;
+          margin-top: -1em;
+          line-height: 1.5;
+        }
+      }
+
+      .product-details__container__product__info--details__CTA {
+        display: flex;
+        justify-content: start;
+        margin-top: 2em;
+        padding-left: 5em;
+        @include phone {
+          padding-left: 2em;
+          padding-bottom: 2em;
+        }
+
+        .CTA {
+          cursor: pointer;
+          border: none;
+          height: 2em;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+          width: 10em;
+          margin: 0 2em;
+          background-color: #5ef36d;
+        }
+      }
+    }
+  }
+
+  .product-details__container__product__reviews {
+    margin: 0 auto;
+    width: 90%;
+    @include tablet {
+      width: 100%;
+    }
+    @include phone {
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@mixin phone {
+  @media (min-width: 300px) and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 750px) and (max-width: 900px) {
+    @content;
+  }
+}
+
+.cart__container {
+  overflow-x: hidden;
+  width: 90vw;
+  margin: 0 auto;
+  font-family: 'Open sans';
+  display: flex;
+  @include phone {
+    display: block;
+    width: 90vw;
+  }
+  @include tablet {
+    display: block;
+  }
+
+  .cart__container__items {
+    width: 75%;
+    @include tablet {
+      width: 100%;
+    }
+    @include phone {
+      width: 100%;
+    }
+
+    .cart__container__items--heading {
+      margin-top: 2em;
+      background-color: #9ca9aa;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li {
+          display: block;
+          height: 2em;
+          margin-top: 0.5em;
+          font-size: 1.2em;
+          text-align: center;
+        }
+        .big--span {
+          width: 40%;
+          margin-left: 1em;
+        }
+        .price--span {
+          width: 20%;
+          @include phone {
+            display: none;
+          }
+        }
+        .Qty--span {
+          width: 20%;
+          @include phone {
+            width: 50%;
+          }
+        }
+        .total--span {
+          width: 20%;
+
+          @include phone {
+            display: none;
+          }
+        }
+      }
+    }
+    .cart__container__items--single {
+      width: 100% !important;
+      display: flex;
+      margin: 1.5em 0;
+      background-color: #faf0e6;
+      padding: 1em 0;
+
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      .cart__container__items--single--product {
+        width: 40%;
+        display: flex;
+        // margin-left: 1em;
+        @include phone {
+          width: 60%;
+        }
+
+        img {
+          height: 5em;
+          padding: 0.5em 1em;
+
+          @include phone {
+            height: 3em;
+          }
+        }
+        p {
+          font-size: 1.1em;
+          margin: 0 0 0 1em;
+          width: 70%;
+
+          @include phone {
+            // font-size: 1em;
+            width: 50%;
+            margin: 0;
+          }
+        }
+      }
+      .cart__container__items--single--price {
+        width: 20%;
+        margin-left: 0.5em;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        p {
+          width: 100%;
+        }
+        @include phone {
+          display: none;
+        }
+      }
+      .cart__container__items--single--qty {
+        width: 20%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        select {
+          width: 30%;
+          height: 2em;
+          margin: 0 auto;
+          @include phone {
+            width: 60%;
+          }
+        }
+        @include phone {
+          width: 20%;
+        }
+      }
+      .cart__container__items--single--total {
+        width: 15%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        p {
+          width: 100%;
+        }
+        .middle {
+          margin: 0 2em;
+        }
+
+        @include phone {
+          display: none;
+        }
+      }
+      .cart__container__items--single--remove {
+        width: 5%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        @include phone {
+          width: 20%;
+        }
+        img {
+          height: 25px;
+          margin: 0 auto;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .cart__container__CTA {
+    width: 25%;
+    @include phone {
+      width: 100%;
+      margin: 0 auto;
+    }
+    @include tablet {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .cart__container__CTA__card {
+      margin: 2em auto 0;
+      @include phone {
+        margin: 0 auto;
+        width: 100%;
+      }
+      width: 90%;
+      background-color: #faf0e6;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      h3 {
+        padding-left: 0.5em;
+      }
+      p {
+        padding-left: 1em;
+      }
+      button {
+        margin: 1em;
+        width: 90%;
+        // height: 2em;
+        border: none;
+        background-color: #5ef36d;
+        padding: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+    }
+  }
+}

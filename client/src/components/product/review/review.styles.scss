@@ -1,0 +1,53 @@
+@mixin phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+.review__conatiner {
+  
+  font-family: 'Open Sans';
+  padding: 0 1em;
+  // width: 70%;
+  margin: 1em 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  .review__container__user {
+    display: flex;
+    justify-content: start;
+    padding: 0.5em 0;
+    img {
+      height: 3em;
+      border-radius: 100px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      -ms-border-radius: 100px;
+      -o-border-radius: 100px;
+    }
+    .review__container__user--details {
+      p {
+        padding: 0;
+        margin: 0;
+        margin-left: 0.5em;
+        font-size: 1.1em;
+
+        @include phone {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  .review__container__comment {
+    padding-bottom: 1em;
+  }
+}

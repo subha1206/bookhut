@@ -1,9 +1,20 @@
 import React from 'react';
 
-import './loader.styles.scss';
+import './loader.styles.css';
 
 const Loader = () => {
-  return <div></div>;
+  return (
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 };
 
 export default Loader;
