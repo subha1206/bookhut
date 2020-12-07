@@ -92,7 +92,7 @@
 
       .product-details__container__product__info--details__CTA {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         margin-top: 2em;
         padding-left: 5em;
         @include phone {

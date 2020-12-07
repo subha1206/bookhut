@@ -23,7 +23,9 @@ const ProductDetails = ({ history, match }) => {
   return (
     <div className="product-details__container">
       {loading ? (
-        <Loader />
+        <div style={{ textAlign: 'center', marginTop: '10em' }}>
+          <Loader />
+        </div>
       ) : (
         <>
           <div className="product-details__container__product__info">

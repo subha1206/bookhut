@@ -1,28 +1,87 @@
 import React, { useState } from 'react';
-
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../../redux/actions/userActions';
 import SearchBox from '../searchBox';
-import DropDown from './DropDown';
+import Dropdown from './DropDown';
 import logo from '../../../assets/image/bookhut.png';
 import './header.styles.scss';
 
 const Header = () => {
-  const [userToggle, setUserToggle] = useState(false);
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const userLogin = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
+  const { user } = userLogin;
+  const { cartItems } = cart;
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+  const handleLogout = () => {
+    setDropdown(false);
+    dispatch(logout(history));
+    
+  };
+
   return (
-    <nav className="header__container">
-      <div className="header__container__logo">
-        <img src={logo} alt="BookHub" />
-      </div>
-      <div className="header__container__search">
-        <SearchBox />
-      </div>
-      <div className="header__container__info">
-        <ul className="header__container__info__item">
-          <li>Cart</li>
-          <li>Profile</li>
-          <DropDown />
+    <>
+      <nav className="navbar">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className="nav-item">
+            <SearchBox />
+          </li>
+          <li className="nav-item">
+            <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
+              Cart({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+            </Link>
+          </li>
+          {user ? (
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onClick={closeMobileMenu}
+            >
+              <div className="nav-links">{user.name}</div>
+              {dropdown && <Dropdown handleLogout={handleLogout} />}
+            </li>
+          ) : (
+            <li className="nav-item">
+              <Link to="/login" className="nav-links" onClick={closeMobileMenu}>
+                SignIn
+              </Link>
+            </li>
+          )}
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

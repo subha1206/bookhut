@@ -1,25 +1,27 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const colors = require('colors');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const db = require('./config/db');
 const AppError = require('./utils/AppError');
 
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
-
-dotenv.config();
+const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 db();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
   res.send('App running');
 });
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/products', productRoutes);
+app.use('/api/v1/orders', orderRoutes);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));

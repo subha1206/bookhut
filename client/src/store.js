@@ -6,17 +6,11 @@ import logger from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-const cartItemsfromStorage = localStorage.getItem('cartItems')
-  ? JSON.parse(localStorage.getItem('cartItems'))
-  : [];
-
-const initialState = {
-  cart: { cartItems: cartItemsfromStorage },
-};
+const initialState = {};
 const persistConfig = {
-  key: 'auth',
+  key: 'root',
   storage: storage,
-  whitelist: ['auth'], // which reducer want to store
+  whitelist: ['cart', 'user'], // which reducer want to store
 };
 
 const pReducer = persistReducer(persistConfig, rootReducer);

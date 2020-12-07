@@ -1,0 +1,139 @@
+@mixin phone {
+  @media (min-width: 300px) and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 750px) and (max-width: 900px) {
+    @content;
+  }
+}
+
+.profile__container {
+  width: 90vw;
+  margin: 0 auto;
+  font-family: 'Open sans';
+
+  .profile__container__user {
+    width: 80%;
+    margin: 0 auto;
+
+    @include phone {
+      width: 100%;
+    }
+
+    .profile__container__user__container {
+      background-color: rgba(229, 228, 226, 0.5);
+      text-align: center;
+      margin: 2em 0;
+      img {
+        height: 5em;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        padding: 1em;
+      }
+      h3 {
+        margin: 0.5em 0;
+      }
+      p {
+        margin: 0;
+        padding-bottom: 1em;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .profile__container__orders {
+    width: 80%;
+    margin: 0 auto;
+
+    @include phone {
+      width: 100%;
+
+      h2 {
+        // margin: 0 0.5em;
+        text-align: center;
+        text-decoration: underline;
+      }
+    }
+
+    .profile__container__orders__list {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .profile__container__orders__item {
+          background-color: rgba(229, 228, 226, 0.5);
+          margin: 1em;
+          display: flex;
+          justify-content: space-between;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+          cursor: pointer;
+
+          @include phone {
+            display: block;
+          }
+
+          .order__container__list__item__details {
+            display: flex;
+            justify-content: flex-start;
+            width: 45%;
+
+            @include phone {
+              width: 90%;
+            }
+
+            img {
+              height: 5em;
+              padding: 1em;
+            }
+            p {
+              font-size: 0.9em;
+              font-weight: 600;
+            }
+            .title {
+              &:hover {
+                text-decoration: underline;
+                color: royalblue;
+              }
+            }
+          }
+
+          .order__container__list__item__price {
+            display: flex;
+            justify-content: safe;
+
+            // justify-self: center;
+            width: 55%;
+            // align-items: center;
+
+            @include phone {
+              display: block;
+              width: 100%;
+            }
+            p {
+              font-size: 0.75em;
+              font-weight: 600;
+              padding: 1em 0;
+              margin: 0 1.5em;
+
+              @include phone {
+                padding: 0.3em 0;
+                font-size: 0.9em;
+                margin: 0 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

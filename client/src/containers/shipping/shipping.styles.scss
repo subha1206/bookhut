@@ -1,0 +1,54 @@
+@mixin phone {
+  @media (min-width: 300px) and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 750px) and (max-width: 900px) {
+    @content;
+  }
+}
+.shipping__container {
+  width: 40vw;
+  margin: 2em auto;
+  background-color: #faf0e6;
+  font-family: 'Open sans';
+  padding: 1em 2em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  @include phone {
+    width: 70vw;
+    margin: 4em auto;
+  }
+  .shipping__container__form {
+    text-align: center;
+    form {
+      p {
+        margin: 0.5em 0;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-align: left !important;
+      }
+      input {
+        font-size: 1em;
+        height: 2.5em;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+      .submit {
+        margin: 2em auto;
+        width: 50%;
+        border: none;
+        background-color: #5ef36d;
+      }
+    }
+  }
+}

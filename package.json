@@ -28,7 +28,9 @@
     "jsonwebtoken": "^8.5.1",
     "mailgen": "^2.0.14",
     "mongoose": "^5.11.1",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.4.16",
+    "razorpay": "^2.0.6",
     "validator": "^13.5.1"
   }
 }
