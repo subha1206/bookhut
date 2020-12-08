@@ -32,6 +32,8 @@ const productDetailsReducers = (state = initialStateDetails, action) => {
       return { ...state, product: action.payload, loading: false };
     case productConstants.PRODUCT_DETAILS_FAIL:
       return { ...state, loading: false };
+    case productConstants.PRODUCT_ADD_REVIEW:
+      return { ...state, product: action.payload, loading: false };
     default:
       return state;
   }

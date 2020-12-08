@@ -18,6 +18,37 @@
     width: 80%;
     margin: 0 auto;
 
+    form {
+      // padding: 2em 0;
+      input {
+        width: 8em;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+
+        border: 1px solid black;
+        height: 1.5em;
+        font-size: 16px;
+      }
+      button {
+        width: 5em;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        height: 2em;
+        border: none;
+        margin: 0 0 0 1em;
+        cursor: pointer;
+        background-color: #5ef36d;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+
     @include phone {
       width: 100%;
     }

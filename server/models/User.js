@@ -13,6 +13,11 @@ const userSchema = mongoose.Schema({
     unique: [true, 'Email already in use, please use a different email ID'],
     validate: [isEmail, 'Please provide a valid email ID'],
   },
+  photo: {
+    type: String,
+    default:
+      'https://res.cloudinary.com/dvzkvy2jg/image/upload/v1607435879/pou_jHw7_salbif.jpg',
+  },
   active: {
     type: Boolean,
     default: true,

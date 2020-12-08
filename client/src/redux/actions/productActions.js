@@ -26,3 +26,26 @@ export const getOneProduct = (id) => async (dispatch) => {
     dispatch({ type: productConstants.PRODUCT_DETAILS_FAIL });
   }
 };
+
+export const addReview = (id, review) => async (dispatch, getState) => {
+  try {
+    const {
+      user: { token },
+    } = getState();
+
+    if (token) {
+      axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
+    }
+
+    const { data } = await axios.post(
+      `/api/v1/products/${id}/add-review`,
+      review
+    );
+    dispatch({
+      type: productConstants.PRODUCT_ADD_REVIEW,
+      payload: data.data,
+    });
+  } catch (err) {
+    dispatch({ type: productConstants.PRODUCT_DETAILS_FAIL });
+  }
+};

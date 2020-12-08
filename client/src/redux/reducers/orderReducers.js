@@ -45,7 +45,7 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        success: true,
+        success: false,
         myOrders: action.payload,
       };
     case orderConstants.GET_ALL_MY_ORDERS_FAIL:

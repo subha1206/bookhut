@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const path = require('path');
 const db = require('./config/db');
 const AppError = require('./utils/AppError');
 

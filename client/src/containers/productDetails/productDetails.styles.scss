@@ -120,6 +120,54 @@
   .product-details__container__product__reviews {
     margin: 0 auto;
     width: 90%;
+    .login__error__review {
+      text-align: center;
+      strong {
+        margin: 2em auto;
+        font-size: 1.2em;
+        color: red;
+        display: block;
+      }
+    }
+
+    form {
+      // width: 50%;
+      margin: 1em;
+
+      textarea {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        width: 60%;
+        border: 1px solid black;
+        // height: 1.5em;
+        font-size: 16px;
+        display: block;
+        margin: 0 auto;
+        @include phone {
+          width: 90%;
+        }
+      }
+
+      button {
+        display: block;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        height: 2em;
+        border: none;
+        margin: 1em auto;
+        cursor: pointer;
+        background-color: #5ef36d;
+        font-size: 14px;
+        font-weight: 600;
+        width: 10em;
+      }
+    }
     @include tablet {
       width: 100%;
     }

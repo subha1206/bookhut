@@ -29,3 +29,18 @@ export const register = (registerData, history) => async (dispatch) => {
     dispatch({ type: userConstants.USER_REGISTER_FAIL });
   }
 };
+
+export const uploadProfilePic = (formData) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: userConstants.USER_PROFILE_LOADING });
+    const {
+      user: { token },
+    } = getState();
+
+    if (token) {
+      axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
+    }
+    const { data } = await axios.post('/api/v1/users/upload-photo', formData);
+    dispatch({ type: userConstants.USER_UPLOAD_PROFILE_PIC, payload: data });
+  } catch (err) {}
+};

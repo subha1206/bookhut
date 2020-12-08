@@ -70,6 +70,15 @@
           width: 70%;
           margin: 1em 0;
           font-size: 1.1em;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+
+          border: 1px solid black;
+          height: 1.5em;
+          // font-size: 16px;
 
           @include phone {
             font-size: 1em;
@@ -79,6 +88,14 @@
           width: 70%;
           margin-bottom: 1em;
           font-size: 1.1em;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+
+          border: 1px solid black;
+          height: 1.5em;
           @include phone {
             font-size: 1em;
             margin: 1em;
@@ -86,11 +103,24 @@
         }
 
         input[type='submit'] {
-          margin: 1em 0;
+          margin: 1em auto;
           font-size: 1.2em;
           border: none;
           cursor: pointer;
           background-color: #5ef36d;
+          display: block;
+          width: 5em;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+          height: 2em;
+          border: none;
+          cursor: pointer;
+          background-color: #5ef36d;
+          font-size: 14px;
+          font-weight: 600;
 
           @include phone {
             font-size: 1em;

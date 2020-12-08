@@ -5,7 +5,6 @@ import { ReactComponent as User } from '../../assets/svgs/user.svg';
 import { ReactComponent as Address } from '../../assets/svgs/placeholder.svg';
 import { ReactComponent as Email } from '../../assets/svgs/mail.svg';
 import { ReactComponent as Edit } from '../../assets/svgs/pen.svg';
-// import { ReactComponent as PaymentMode } from '../../assets/svgs/payment-method.svg';
 import { ReactComponent as Tax } from '../../assets/svgs/tax_pay.svg';
 import { ReactComponent as Total } from '../../assets/svgs/best-price.svg';
 import { ReactComponent as Shipping } from '../../assets/svgs/truck.svg';

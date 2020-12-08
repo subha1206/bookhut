@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../../redux/actions/userActions';
-import SearchBox from '../searchBox';
+// import SearchBox from '../searchBox';
 import Dropdown from './DropDown';
 import logo from '../../../assets/image/bookhut.png';
 import './header.styles.scss';
@@ -41,7 +41,6 @@ const Header = () => {
   const handleLogout = () => {
     setDropdown(false);
     dispatch(logout(history));
-    
   };
 
   return (
@@ -54,9 +53,9 @@ const Header = () => {
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <SearchBox />
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
               Cart({cartItems.reduce((acc, item) => acc + item.qty, 0)})

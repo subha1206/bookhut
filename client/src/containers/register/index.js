@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../redux/actions/userActions';
 import Loader from '../../components/common/loader';
+import { Link } from 'react-router-dom';
 
 import './register.styles.scss';
 
@@ -69,7 +70,9 @@ const Register = ({ history }) => {
               />
 
               <input type="submit" value="Register" />
-              <p>Already have an account ? login</p>
+              <Link className="login" to="/login">
+                <p>Already have an account ? login</p>
+              </Link>
             </form>
           </div>
         )}
