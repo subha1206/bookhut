@@ -43,7 +43,7 @@ const Order = ({ match, history }) => {
       amount: amount,
       currency: currency,
       name: 'BookHut',
-      description: 'Test Transaction',
+      description: 'Test Transaction!',
       image: '',
       order_id: id,
       handler: function (response) {
