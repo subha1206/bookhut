@@ -11,8 +11,8 @@ const Login = ({ location, history }) => {
     email: '',
     password: '',
   });
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  // const [emailError, setEmailError] = useState('');
+  // const [passwordError, setPasswordError] = useState('');
 
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.user);

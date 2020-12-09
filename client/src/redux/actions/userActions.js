@@ -1,11 +1,12 @@
 import axios from 'axios';
 import userConstants from '../constants/userConstants';
 
+import { apiEndPoints } from '../../helper/API';
 export const login = (loginCred) => async (dispatch) => {
   try {
     dispatch({ type: userConstants.USER_LOGIN_REQUEST });
 
-    const { data } = await axios.post('/api/v1/users/login', loginCred);
+    const { data } = await axios.post(apiEndPoints.USER_LOGIN, loginCred);
     dispatch({ type: userConstants.USER_LOGIN_SUCCESS, payload: data });
   } catch (err) {
     dispatch({ type: userConstants.USER_LOGIN_FAIL });
@@ -20,7 +21,7 @@ export const logout = (history) => (dispatch) => {
 export const register = (registerData, history) => async (dispatch) => {
   try {
     dispatch({ type: userConstants.USER_REGISTER_REQUEST });
-    const { data } = await axios.post('/api/v1/users/register', registerData);
+    const { data } = await axios.post(apiEndPoints.USER_REGISTER, registerData);
     dispatch({ type: userConstants.USER_REGISTER_SUCCESS });
     dispatch({ type: userConstants.USER_LOGIN_SUCCESS, payload: data });
 
@@ -40,7 +41,10 @@ export const uploadProfilePic = (formData) => async (dispatch, getState) => {
     if (token) {
       axios.defaults.headers.common = { Authorization: `Bearer ${token}` };
     }
-    const { data } = await axios.post('/api/v1/users/upload-photo', formData);
+    const { data } = await axios.post(
+      apiEndPoints.USER_UPLOAD_PROFILE_PICTURE,
+      formData
+    );
     dispatch({ type: userConstants.USER_UPLOAD_PROFILE_PIC, payload: data });
   } catch (err) {}
 };

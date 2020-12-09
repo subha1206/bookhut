@@ -1,8 +1,11 @@
 import cartConstants from '../constants/cartConstants';
 import axios from 'axios';
+import { apiEndPoints } from '../../helper/API';
 
 export const addToCart = (id, qty) => async (dispacth) => {
-  const { data } = await axios.get(`/api/v1/products/${id}`);
+  const url = `${apiEndPoints.GET_ONE_PRODUCT}/${id}`;
+  const { data } = await axios.get(url);
+  console.log(data);
 
   dispacth({
     type: cartConstants.CART_ADD_ITEM,

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import { apiEndPoints } from '../../helper/API';
+
 import {
   getOrderDetails,
   updatePayment,
@@ -32,9 +34,11 @@ const Order = ({ match, history }) => {
   async function handlePayment() {
     await loadScripct();
 
+    const url = `${apiEndPoints.MAKE_PAYMENT}/${match.params.id}/pay`;
+
     const {
       data: { id, amount, currency },
-    } = await axios.post(`/api/v1/orders/${match.params.id}/pay`, {
+    } = await axios.post(url, {
       amount: order?.totalPrice + order?.shippingPrice,
     });
 

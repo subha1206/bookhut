@@ -10,7 +10,6 @@
 }
 
 .review__conatiner {
-  
   font-family: 'Open Sans';
   padding: 0 1em;
   // width: 70%;
@@ -34,7 +33,7 @@
       -o-border-radius: 100px;
     }
     .review__container__user--details {
-      p {
+      .user--name {
         padding: 0;
         margin: 0;
         margin-left: 0.5em;
@@ -43,6 +42,12 @@
         @include phone {
           font-size: 1.2em;
         }
+      }
+      .review--time {
+        padding: 0;
+        margin: 0;
+        margin-left: 0.8em;
+        font-size: 0.8em;
       }
     }
   }
