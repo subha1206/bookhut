@@ -1,1 +1,43 @@
+.Toastify__toast--error,
+.Toastify__toast--warning,
+.Toastify__toast--success,
+.Toastify__toast--info {
+  top: 1em !important;
+  right: -1em !important;
+  border-radius: 15px !important;
+  -webkit-border-radius: 15px !important;
+  -moz-border-radius: 15px !important;
+  -ms-border-radius: 15px !important;
+  -o-border-radius: 15px !important;
+  text-align: center !important;
+}
 
+.Toastify__toast--error {
+  background: #f03a47 !important;
+}
+
+.Toastify__toast--warning {
+  background: #f8690a !important;
+}
+
+.Toastify__toast--success {
+  background: #5ef36d !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .Toastify__toast-container {
+    width: 90vw !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Toastify__toast-container {
+    width: 80vw !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .Toastify__toast-container {
+    width: 45rem !important;
+  }
+}
